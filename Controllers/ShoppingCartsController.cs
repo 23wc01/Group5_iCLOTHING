@@ -17,9 +17,26 @@ namespace Group5__iCLOTHINGApp.Controllers
         // GET: ShoppingCarts
         public ActionResult Index()
         {
-            var shoppingCart = db.ShoppingCart.Include(s => s.Customer);
-            return View(shoppingCart.ToList());
+            if (Session["userIDSS"] == null)
+            {
+                // If user is not logged in, redirect to login page
+                return RedirectToAction("Login", "UserPasswords");
+            }
+
+            var userID = Session["userIDSS"].ToString(); // Keep userID as string
+            var shoppingCartItems = db.ShoppingCart.Include(s => s.Customer)
+                                .Where(s => s.customerID == userID);
+
+            //variable to calulate the cost of the bag
+            var totalCost = shoppingCartItems.Sum(item => item.cartProductPrice * item.cartProductQty);
+
+            // Pass the total cost to the view
+            ViewBag.TotalCost = totalCost;
+
+
+            return View(shoppingCartItems.ToList());
         }
+
 
         // GET: ShoppingCarts/Details/5
         public ActionResult Details(string id)
