@@ -6,7 +6,9 @@ Extra notes: All IDs & queryNo must be 10 chars regardless of whether model it's
 
 Administrator login: username = admin | password = admin
 Administrator can access:
+
     * Permission to edit AboutUs model
+    
     * Permission to read & 'reply' to all UserQuery models created by Customers 
     * Permission to perform CRUD operations on Department, Category, and Product
     * Permission to run almost all^ customer functionalities (^no permission to add to ShoppingCart)
