@@ -1,0 +1,466 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Group5_iCLOTHINGDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Administrator">
+    <Key>
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="adminID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="adminName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="adminEmail" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dateHired" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="AboutUs" Relationship="Self.FK_AboutUs_Administrator" FromRole="Administrator" ToRole="AboutUs" />
+    <NavigationProperty Name="Email" Relationship="Self.FK_Email_Administrator" FromRole="Administrator" ToRole="Email" />
+  </EntityType>
+  <EntityType Name="Brand">
+    <Key>
+      <PropertyRef Name="brandID" />
+    </Key>
+    <Property Name="brandID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="brandName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="brandDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Brand_Product" FromRole="Brand" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoryID" />
+    </Key>
+    <Property Name="categoryID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="categoryName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="categoryDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cataloging" Relationship="Self.FK_Cataloging_Category" FromRole="Category" ToRole="Cataloging" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Product_Category" FromRole="Category" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="customerID" />
+    </Key>
+    <Property Name="customerID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="customerName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="customerShippingAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="customerBillingAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="customerDOB" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="customerGender" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Email" Relationship="Self.FK_Email_Customer" FromRole="Customer" ToRole="Email" />
+    <NavigationProperty Name="ItemDelivery" Relationship="Self.FK_ItemDelivery_Customer" FromRole="Customer" ToRole="ItemDelivery" />
+    <NavigationProperty Name="ShoppingCart" Relationship="Self.FK_ShoppingCart_Customer" FromRole="Customer" ToRole="ShoppingCart" />
+    <NavigationProperty Name="UserComments" Relationship="Self.FK_UserComments_Customer" FromRole="Customer" ToRole="UserComments" />
+    <NavigationProperty Name="UserPassword" Relationship="Self.FK_UserPassword_Customer" FromRole="Customer" ToRole="UserPassword" />
+    <NavigationProperty Name="UserQuery" Relationship="Self.FK_UserQuery_Customer" FromRole="Customer" ToRole="UserQuery" />
+  </EntityType>
+  <EntityType Name="Department">
+    <Key>
+      <PropertyRef Name="departmentID" />
+    </Key>
+    <Property Name="departmentID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="departmentName" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="departmentDescription" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Cataloging" Relationship="Self.FK_Cataloging_Department" FromRole="Department" ToRole="Cataloging" />
+  </EntityType>
+  <EntityType Name="Email">
+    <Key>
+      <PropertyRef Name="emailNo" />
+    </Key>
+    <Property Name="emailNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="emailDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="emailSubject" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="emailBody" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="adminID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="customerID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Administrator" Relationship="Self.FK_Email_Administrator" FromRole="Email" ToRole="Administrator" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_Email_Customer" FromRole="Email" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="ItemDelivery">
+    <Key>
+      <PropertyRef Name="stickerID" />
+    </Key>
+    <Property Name="stickerID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="stickerDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="productID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="customerID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_ItemDelivery_Customer" FromRole="ItemDelivery" ToRole="Customer" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_ItemDelivery_Product" FromRole="ItemDelivery" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="OrderStatus">
+    <Key>
+      <PropertyRef Name="statusID" />
+    </Key>
+    <Property Name="statusID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="statusDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="cartID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="ShoppingCart" Relationship="Self.FK_OrderStatus_ShoppingCart" FromRole="OrderStatus" ToRole="ShoppingCart" />
+  </EntityType>
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="productID" />
+    </Key>
+    <Property Name="productID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="productName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="productDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="productPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="productQty" Type="Int32" Nullable="false" />
+    <Property Name="categoryID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cartID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Brand" Relationship="Self.FK_Brand_Product" FromRole="Product" ToRole="Brand" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Product_Category" FromRole="Product" ToRole="Category" />
+    <NavigationProperty Name="ItemDelivery" Relationship="Self.FK_ItemDelivery_Product" FromRole="Product" ToRole="ItemDelivery" />
+    <NavigationProperty Name="Cataloging" Relationship="Self.FK_Cataloging_Product" FromRole="Product" ToRole="Cataloging" />
+    <NavigationProperty Name="ShoppingCart" Relationship="Self.FK_Product_ShoppingCart" FromRole="Product" ToRole="ShoppingCart" />
+  </EntityType>
+  <EntityType Name="ShoppingCart">
+    <Key>
+      <PropertyRef Name="cartID" />
+    </Key>
+    <Property Name="cartID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="cartProductPrice" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
+    <Property Name="cartProductQty" Type="Int32" Nullable="false" />
+    <Property Name="customerID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_ShoppingCart_Customer" FromRole="ShoppingCart" ToRole="Customer" />
+    <NavigationProperty Name="OrderStatus" Relationship="Self.FK_OrderStatus_ShoppingCart" FromRole="ShoppingCart" ToRole="OrderStatus" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Product_ShoppingCart" FromRole="ShoppingCart" ToRole="Product" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="UserComments">
+    <Key>
+      <PropertyRef Name="commentNo" />
+    </Key>
+    <Property Name="commentNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="commentDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="commentDescription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="customerID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_UserComments_Customer" FromRole="UserComments" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="UserPassword">
+    <Key>
+      <PropertyRef Name="userID" />
+    </Key>
+    <Property Name="userID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="userAccountName" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="userEncryptedPassword" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="passwordExpiryTime" Type="Int32" Nullable="false" />
+    <Property Name="userAccountExpiryDate" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_UserPassword_Customer" FromRole="UserPassword" ToRole="Customer" />
+    <Property Name="isAdmin" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserQuery">
+    <Key>
+      <PropertyRef Name="queryNo" />
+    </Key>
+    <Property Name="queryNo" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="queryDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="queryDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="customerID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Customer" Relationship="Self.FK_UserQuery_Customer" FromRole="UserQuery" ToRole="Customer" />
+  </EntityType>
+  <EntityType Name="AboutUs">
+    <Key>
+      <PropertyRef Name="companyAddress" />
+      <PropertyRef Name="companyShippingPolicy" />
+      <PropertyRef Name="companyReturnPolicy" />
+      <PropertyRef Name="companyContactInfo" />
+      <PropertyRef Name="companyBusinessDescription" />
+      <PropertyRef Name="adminID" />
+    </Key>
+    <Property Name="companyAddress" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="companyShippingPolicy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="companyReturnPolicy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="companyContactInfo" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="companyBusinessDescription" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="adminID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Administrator" Relationship="Self.FK_AboutUs_Administrator" FromRole="AboutUs" ToRole="Administrator" />
+  </EntityType>
+  <EntityType Name="Cataloging">
+    <Key>
+      <PropertyRef Name="departmentID" />
+    </Key>
+    <Property Name="departmentID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="categoryID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="productID" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="Category" Relationship="Self.FK_Cataloging_Category" FromRole="Cataloging" ToRole="Category" />
+    <NavigationProperty Name="Department" Relationship="Self.FK_Cataloging_Department" FromRole="Cataloging" ToRole="Department" />
+    <NavigationProperty Name="Product" Relationship="Self.FK_Cataloging_Product" FromRole="Cataloging" ToRole="Product" />
+  </EntityType>
+  <Association Name="FK_AboutUs_Administrator">
+    <End Role="Administrator" Type="Self.Administrator" Multiplicity="1" />
+    <End Role="AboutUs" Type="Self.AboutUs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrator">
+        <PropertyRef Name="adminID" />
+      </Principal>
+      <Dependent Role="AboutUs">
+        <PropertyRef Name="adminID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Email_Administrator">
+    <End Role="Administrator" Type="Self.Administrator" Multiplicity="1" />
+    <End Role="Email" Type="Self.Email" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Administrator">
+        <PropertyRef Name="adminID" />
+      </Principal>
+      <Dependent Role="Email">
+        <PropertyRef Name="adminID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Brand_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="Brand" Type="Self.Brand" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="Brand">
+        <PropertyRef Name="brandID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cataloging_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="0..1" />
+    <End Role="Cataloging" Type="Self.Cataloging" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="Cataloging">
+        <PropertyRef Name="categoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_Category">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="categoryID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="categoryID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Email_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="Email" Type="Self.Email" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="Email">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemDelivery_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="ItemDelivery" Type="Self.ItemDelivery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="ItemDelivery">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ShoppingCart_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="ShoppingCart">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserComments_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="UserComments" Type="Self.UserComments" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="UserComments">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserPassword_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="UserPassword" Type="Self.UserPassword" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="UserPassword">
+        <PropertyRef Name="userID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserQuery_Customer">
+    <End Role="Customer" Type="Self.Customer" Multiplicity="1" />
+    <End Role="UserQuery" Type="Self.UserQuery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="customerID" />
+      </Principal>
+      <Dependent Role="UserQuery">
+        <PropertyRef Name="customerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cataloging_Department">
+    <End Role="Department" Type="Self.Department" Multiplicity="1" />
+    <End Role="Cataloging" Type="Self.Cataloging" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Department">
+        <PropertyRef Name="departmentID" />
+      </Principal>
+      <Dependent Role="Cataloging">
+        <PropertyRef Name="departmentID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ItemDelivery_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="1" />
+    <End Role="ItemDelivery" Type="Self.ItemDelivery" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="ItemDelivery">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_OrderStatus_ShoppingCart">
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="1" />
+    <End Role="OrderStatus" Type="Self.OrderStatus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShoppingCart">
+        <PropertyRef Name="cartID" />
+      </Principal>
+      <Dependent Role="OrderStatus">
+        <PropertyRef Name="cartID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Cataloging_Product">
+    <End Role="Product" Type="Self.Product" Multiplicity="0..1" />
+    <End Role="Cataloging" Type="Self.Cataloging" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="productID" />
+      </Principal>
+      <Dependent Role="Cataloging">
+        <PropertyRef Name="productID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Product_ShoppingCart">
+    <End Role="ShoppingCart" Type="Self.ShoppingCart" Multiplicity="0..1" />
+    <End Role="Product" Type="Self.Product" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ShoppingCart">
+        <PropertyRef Name="cartID" />
+      </Principal>
+      <Dependent Role="Product">
+        <PropertyRef Name="cartID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Group5_iCLOTHINGDBEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Administrator" EntityType="Self.Administrator" />
+    <EntitySet Name="Brand" EntityType="Self.Brand" />
+    <EntitySet Name="Category" EntityType="Self.Category" />
+    <EntitySet Name="Customer" EntityType="Self.Customer" />
+    <EntitySet Name="Department" EntityType="Self.Department" />
+    <EntitySet Name="Email" EntityType="Self.Email" />
+    <EntitySet Name="ItemDelivery" EntityType="Self.ItemDelivery" />
+    <EntitySet Name="OrderStatus" EntityType="Self.OrderStatus" />
+    <EntitySet Name="Product" EntityType="Self.Product" />
+    <EntitySet Name="ShoppingCart" EntityType="Self.ShoppingCart" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="UserComments" EntityType="Self.UserComments" />
+    <EntitySet Name="UserPassword" EntityType="Self.UserPassword" />
+    <EntitySet Name="UserQuery" EntityType="Self.UserQuery" />
+    <EntitySet Name="AboutUs" EntityType="Self.AboutUs" />
+    <EntitySet Name="Cataloging" EntityType="Self.Cataloging" />
+    <AssociationSet Name="FK_AboutUs_Administrator" Association="Self.FK_AboutUs_Administrator">
+      <End Role="Administrator" EntitySet="Administrator" />
+      <End Role="AboutUs" EntitySet="AboutUs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Email_Administrator" Association="Self.FK_Email_Administrator">
+      <End Role="Administrator" EntitySet="Administrator" />
+      <End Role="Email" EntitySet="Email" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Brand_Product" Association="Self.FK_Brand_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Brand" EntitySet="Brand" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cataloging_Category" Association="Self.FK_Cataloging_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Cataloging" EntitySet="Cataloging" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_Category" Association="Self.FK_Product_Category">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Email_Customer" Association="Self.FK_Email_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="Email" EntitySet="Email" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemDelivery_Customer" Association="Self.FK_ItemDelivery_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="ItemDelivery" EntitySet="ItemDelivery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ShoppingCart_Customer" Association="Self.FK_ShoppingCart_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserComments_Customer" Association="Self.FK_UserComments_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="UserComments" EntitySet="UserComments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserPassword_Customer" Association="Self.FK_UserPassword_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="UserPassword" EntitySet="UserPassword" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserQuery_Customer" Association="Self.FK_UserQuery_Customer">
+      <End Role="Customer" EntitySet="Customer" />
+      <End Role="UserQuery" EntitySet="UserQuery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cataloging_Department" Association="Self.FK_Cataloging_Department">
+      <End Role="Department" EntitySet="Department" />
+      <End Role="Cataloging" EntitySet="Cataloging" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ItemDelivery_Product" Association="Self.FK_ItemDelivery_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="ItemDelivery" EntitySet="ItemDelivery" />
+    </AssociationSet>
+    <AssociationSet Name="FK_OrderStatus_ShoppingCart" Association="Self.FK_OrderStatus_ShoppingCart">
+      <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+      <End Role="OrderStatus" EntitySet="OrderStatus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Cataloging_Product" Association="Self.FK_Cataloging_Product">
+      <End Role="Product" EntitySet="Product" />
+      <End Role="Cataloging" EntitySet="Cataloging" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Product_ShoppingCart" Association="Self.FK_Product_ShoppingCart">
+      <End Role="ShoppingCart" EntitySet="ShoppingCart" />
+      <End Role="Product" EntitySet="Product" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

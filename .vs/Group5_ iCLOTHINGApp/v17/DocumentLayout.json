@@ -1,0 +1,294 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\controllers\\userpasswordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:controllers\\userpasswordscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|c:\\users\\chenw\\onedrive\\desktop\\group5_ iclothingapp\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\controllers\\aboutuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:controllers\\aboutuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\controllers\\shoppingcartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:controllers\\shoppingcartscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\models\\userpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:models\\userpassword.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\views\\userqueries\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:views\\userqueries\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\controllers\\orderstatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:controllers\\orderstatuscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\views\\orderstatus\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:views\\orderstatus\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:controllers\\departmentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\views\\aboutus\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:views\\aboutus\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\controllers\\userqueriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:controllers\\userqueriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\views\\userpasswords\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:views\\userpasswords\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:controllers\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\views\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:views\\categories\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\views\\departments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:views\\departments\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{AE6FB927-D776-4139-ACA3-DA2ECC60C36E}|Group5_ iCLOTHINGApp.csproj|solutionrelative:views\\products\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 321,
+          "SelectedChildIndex": 5,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShoppingCartsController.cs",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\ShoppingCartsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ShoppingCartsController.cs",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\ShoppingCartsController.cs",
+              "RelativeToolTip": "Controllers\\ShoppingCartsController.cs",
+              "ViewState": "AQIAAAYAAAAAAABlgXQAwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T06:43:32.673Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserPassword.cs",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Models\\UserPassword.cs",
+              "RelativeDocumentMoniker": "Models\\UserPassword.cs",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Models\\UserPassword.cs",
+              "RelativeToolTip": "Models\\UserPassword.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-04T06:06:51.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\UserQueries\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserQueries\\Create.cshtml",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\UserQueries\\Create.cshtml",
+              "RelativeToolTip": "Views\\UserQueries\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-03-31T23:33:06.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AQIAAAsAAAAAAADw++cpwBoAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T18:21:59.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AboutUsController.cs",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\AboutUsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AboutUsController.cs",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\AboutUsController.cs",
+              "RelativeToolTip": "Controllers\\AboutUsController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADQAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T17:58:03.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserPasswordsController.cs",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\UserPasswordsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserPasswordsController.cs",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\UserPasswordsController.cs",
+              "RelativeToolTip": "Controllers\\UserPasswordsController.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAD4v0oAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T17:53:35.068Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "OrderStatusController.cs",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\OrderStatusController.cs",
+              "RelativeDocumentMoniker": "Controllers\\OrderStatusController.cs",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\OrderStatusController.cs",
+              "RelativeToolTip": "Controllers\\OrderStatusController.cs",
+              "ViewState": "AQIAACoAAAAAAAAAZGYvwDcAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T18:21:46.714Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\UserPasswords\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\UserPasswords\\Create.cshtml",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\UserPasswords\\Create.cshtml",
+              "RelativeToolTip": "Views\\UserPasswords\\Create.cshtml",
+              "ViewState": "AQIAABMAAAAAAAD251QuwB0AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T17:53:28.942Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\OrderStatus\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\OrderStatus\\Create.cshtml",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\OrderStatus\\Create.cshtml",
+              "RelativeToolTip": "Views\\OrderStatus\\Create.cshtml",
+              "ViewState": "AQIAAB0AAAAAAAA341EuwCIAAAA0AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T18:26:26.321Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CategoriesController.cs",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\CategoriesController.cs",
+              "RelativeToolTip": "Controllers\\CategoriesController.cs",
+              "ViewState": "AQIAADMAAAAAAABUa/f0v0UAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T17:52:21.517Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DepartmentsController.cs",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\DepartmentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\DepartmentsController.cs",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\DepartmentsController.cs",
+              "RelativeToolTip": "Controllers\\DepartmentsController.cs",
+              "ViewState": "AQIAAEYAAAAAAAh1q9UpwFIAAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T17:38:19.639Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\AboutUs\\Details.cshtml",
+              "RelativeDocumentMoniker": "Views\\AboutUs\\Details.cshtml",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\AboutUs\\Details.cshtml",
+              "RelativeToolTip": "Views\\AboutUs\\Details.cshtml",
+              "ViewState": "AQIAACIAAAAAAICvhBYtwDAAAAA+AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T18:01:29.429Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserQueriesController.cs",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\UserQueriesController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserQueriesController.cs",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\UserQueriesController.cs",
+              "RelativeToolTip": "Controllers\\UserQueriesController.cs",
+              "ViewState": "AQIAAC0AAAAAAECS3PIkwDsAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T17:53:49.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\Categories\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Categories\\Create.cshtml",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\Categories\\Create.cshtml",
+              "RelativeToolTip": "Views\\Categories\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T17:52:10.158Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\Products\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Products\\Create.cshtml",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\Products\\Create.cshtml",
+              "RelativeToolTip": "Views\\Products\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T17:50:14.709Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\Departments\\Create.cshtml",
+              "RelativeDocumentMoniker": "Views\\Departments\\Create.cshtml",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Views\\Departments\\Create.cshtml",
+              "RelativeToolTip": "Views\\Departments\\Create.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-02T17:51:40.079Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Users\\chenw\\OneDrive\\Desktop\\Group5_ iCLOTHINGApp\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "Controllers\\ProductsController.cs",
+              "ViewState": "AQIAADAAAAAAAAAzTqURwD0AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-02T17:47:51.923Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
