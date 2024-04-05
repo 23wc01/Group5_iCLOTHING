@@ -26,11 +26,13 @@
                         if (!(bool)Session["isAdminSS"])
                         { // If isAdmin == false, show Cart tab
                             <li>@Html.ActionLink("Your Cart", "Index", "ShoppingCarts", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Email", "Index", "Emails", new { area = "" }, new { @class = "nav-link" })</li>
                         }
                         else
                         { // If isAdmin == true, show Delivery tab
                             <li>@Html.ActionLink("Delivery", "Index", "ItemDeliveries", new { area = "" }, new { @class = "nav-link" })</li>
                             <li>@Html.ActionLink("Order Status", "Index", "OrderStatus", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Email", "Index", "Emails", new { area = "" }, new { @class = "nav-link" })</li>
                         }
 
                     }
@@ -43,7 +45,7 @@
                     {
                         <li>@Html.ActionLink("Login", "Login", "UserPasswords", new { area = "" }, new { @class = "nav-link btn btn-outline-light ms-5 me-1" })</li>
                     }
-                    </ul>
+                </ul>
             </div>
         </div>
     </nav>
