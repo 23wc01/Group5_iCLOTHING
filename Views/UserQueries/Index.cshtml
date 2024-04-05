@@ -1,0 +1,73 @@
+﻿@model IEnumerable<Group5__iCLOTHINGApp.Models.UserQuery>
+@{
+    ViewBag.Title = "Query";
+}
+
+<h1>Your Messages</h1>
+<p>
+    @Html.ActionLink("new message", "Create", new { area = "" }, new { @class = "btn btn-dark m-2" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.queryDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.queryDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Customer.customerName)
+        </th>
+        <th></th>
+    </tr>
+    @if (@Session["isAdminSS"] != null && @Session["isAdminSS"] is bool)
+    {
+        if ((bool)Session["isAdminSS"])
+        { // If isAdmin == true, display ALL UserQueries
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.queryDate.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.queryDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.customerName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.queryNo }, new { @class = "btn btn-outline-dark" }) |
+                        @Html.ActionLink("Reply", "Edit", new { id = item.queryNo }, new { @class = "btn btn-dark" })
+                    </td>
+                </tr>
+            }
+        }
+    }
+    else if (@Session["customerIDSS"] != null)
+    {
+        foreach (var item in Model)
+        {
+            if (item.customerID == @Session["customerIDSS"].ToString())
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.queryDate.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.queryDescription)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer.customerName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", new { id = item.queryNo.ToString() }, new { @class = "btn btn-outline-dark" }) |
+                        @Html.ActionLink("Edit", "Edit", new { id = item.queryNo }, new { @class = "btn btn-dark" }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.queryNo }, new { @class = "btn btn-outline-danger" })
+                    </td>
+                </tr>
+            }
+        }
+    }
+
+</table>

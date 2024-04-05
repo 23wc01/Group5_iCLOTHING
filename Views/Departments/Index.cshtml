@@ -1,0 +1,80 @@
+﻿@model IEnumerable<Group5__iCLOTHINGApp.Models.Department>
+
+@{
+    ViewBag.Title = "Catalog";
+}
+
+<h1>Catalog</h1>
+@using (Html.BeginForm("Index", "Departments", FormMethod.Get))
+{
+    <div class="d-flex justify-content-end">
+        <select class="form-select d-flex justify-content-end input-sm" name="sort">
+            <option value="ascending">&#9650;</option>
+            <option value="descending">&#9660;</option>
+        </select>
+        <button type="submit" class="btn btn-dark ms-2">Sort</button>
+    </div>
+}
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <h3>@Html.ActionLink("Department", "Index", "Departments", new { area = "" }, new { @class = "nav-link text-dark active" })</h3>
+    </li>
+    <li class="nav-item">
+        <h3>@Html.ActionLink("Category", "Index", "Categories", new { area = "" }, new { @class = "nav-link text-dark" })</h3>
+    </li>
+    <li class="nav-item">
+        <h3>@Html.ActionLink("Product", "Index", "Products", new { area = "" }, new { @class = "nav-link text-dark" })</h3>
+    </li>
+    <li class="nav-item">
+        <h3>@Html.ActionLink("Brand", "Index", "Brands", new { area = "" }, new { @class = "nav-link text-dark" })</h3>
+    </li>
+</ul>
+@if (Session["isAdminSS"] != null && Session["isAdminSS"] is bool)
+{
+    if ((bool)Session["isAdminSS"])
+    {
+        <p>
+            @Html.ActionLink("Create New", "Create", new { area = "" }, new { @class = "btn btn-dark my-2" })
+        </p>
+    }
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.departmentName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.departmentDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Cataloging.categoryID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.departmentName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.departmentDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cataloging.categoryID)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.departmentID }, new { @class = "btn btn-outline-dark mx-1" })
+                @if (Session["isAdminSS"] != null && Session["isAdminSS"] is bool)
+                {
+                    if ((bool)Session["isAdminSS"])
+                    { // If isAdmin == true, display Edit & Delete buttons
+                        @Html.ActionLink("Edit", "Edit", new { id = item.departmentID }, new { @class = "btn btn-dark mx-1" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.departmentID }, new { @class = "btn btn-danger mx-1" })
+                    }
+                }
+            </td>
+        </tr>
+    }
+</table>

@@ -1,0 +1,102 @@
+﻿@model IEnumerable<Group5__iCLOTHINGApp.Models.Product>
+
+@{
+    ViewBag.Title = "Catalog";
+}
+<h1 class="">Catalog</h1>
+
+@using (Html.BeginForm("Index", "Products", FormMethod.Get))
+{
+    <div class="d-flex justify-content-end">
+        <form class="d-flex">
+            <input name="searchString" class="form-control me-1" type="search" placeholder="Search product by name" aria-label="Search">
+            <button class="btn btn-dark" type="submit">Search</button>
+        </form>
+    </div>
+}
+
+<ul class="nav nav-tabs">
+    <li class="nav-item">
+        <h3>@Html.ActionLink("Department", "Index", "Departments", new { area = "" }, new { @class = "nav-link text-dark" })</h3>
+    </li>
+    <li class="nav-item">
+        <h3>@Html.ActionLink("Category", "Index", "Categories", new { area = "" }, new { @class = "nav-link text-dark" })</h3>
+    </li>
+    <li class="nav-item">
+        <h3>@Html.ActionLink("Product", "Index", "Products", new { area = "" }, new { @class = "nav-link text-dark active" })</h3>
+    </li>
+    <li class="nav-item">
+        <h3>@Html.ActionLink("Brand", "Index", "Brands", new { area = "" }, new { @class = "nav-link text-dark" })</h3>
+    </li>
+</ul>
+@if (Session["isAdminSS"] != null && Session["isAdminSS"] is bool)
+{
+    if ((bool)Session["isAdminSS"])
+    {
+        <p>@Html.ActionLink("Create New", "Create", new { area = "" }, new { @class = "btn btn-dark my-2" })</p>
+    }
+}
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.productName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productDescription)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.productQty)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Brand.brandName)
+        </th>
+        <th>
+            Category Name
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShoppingCart.customerID)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.productName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productDescription)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.productQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Brand.brandName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Category.categoryName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShoppingCart.customerID)
+            </td>
+            <td>
+                @Html.ActionLink("Details", "Details", new { id = item.productID }, new { @class = "btn btn-outline-dark mx-1" })
+                @if (Session["isAdminSS"] != null && Session["isAdminSS"] is bool)
+                {
+                    if ((bool)Session["isAdminSS"])
+                    { // If isAdmin == true, display Edit & Delete buttons
+                        @Html.ActionLink("Edit", "Edit", new { id = item.productID }, new { @class = "btn btn-dark mx-1" })
+                        @Html.ActionLink("Delete", "Delete", new { id = item.productID }, new { @class = "btn btn-danger mx-1" })
+                    }
+                }
+            </td>
+        </tr>
+    }
+</table>

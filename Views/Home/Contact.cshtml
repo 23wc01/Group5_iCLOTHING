@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+
+    <address>
+        iCLOTHING, Inc.<br />
+        Columbia City, Missouri. 98052-65202<br />
+        <abbr title="Phone">P:</abbr>
+        573.555.0100
+    </address>
+
+    <address>
+        <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+        <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+    </address>
+    <h2>@Html.ActionLink("Send a message", "Index", "UserQueries", new { area = "" }, new { @class = "btn btn-dark" })</h2>
+
+</main>

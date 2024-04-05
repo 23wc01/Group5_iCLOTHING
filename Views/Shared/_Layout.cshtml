@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-dark">
+        <div class="container">
+            @Html.ActionLink("iCLOTHING", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+                <ul class="navbar-nav flex-grow-1">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("About", "Index", "AboutUs", new { area = "" }, new { @class = "nav-link" })</li>
+                    <li>@Html.ActionLink("Catalog", "Index", "Catalogings", new { area = "" }, new { @class = "nav-link" })</li>
+                    @if (Session["isAdminSS"] != null && Session["isAdminSS"] is bool)
+                    {
+                        if (!(bool)Session["isAdminSS"])
+                        { // If isAdmin == false, show Cart tab
+                            <li>@Html.ActionLink("Your Cart", "Index", "ShoppingCarts", new { area = "" }, new { @class = "nav-link" })</li>
+                        }
+                        else
+                        { // If isAdmin == true, show Delivery tab
+                            <li>@Html.ActionLink("Delivery", "Index", "ItemDeliveries", new { area = "" }, new { @class = "nav-link" })</li>
+                            <li>@Html.ActionLink("Order Status", "Index", "OrderStatus", new { area = "" }, new { @class = "nav-link" })</li>
+                        }
+
+                    }
+                    @if (Session["userAccountNameSS"] != null)
+                    {
+                        <li>@Html.ActionLink("Account", "Index", "UserPasswords", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Logout", "Logout", "UserPasswords", new { area = "" }, new { @class = "nav-link btn btn-outline-light ms-5 me-1" })</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "UserPasswords", new { area = "" }, new { @class = "nav-link btn btn-outline-light ms-5 me-1" })</li>
+                    }
+                    </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - iCLOTHING, Inc.</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

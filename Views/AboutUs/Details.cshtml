@@ -1,0 +1,59 @@
+﻿@model Group5__iCLOTHINGApp.Models.AboutUs
+
+@{
+    ViewBag.Title = "About";
+}
+
+<h1>About Us</h1>
+<label class="text-danger">@ViewBag.Notifications</label>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        @Html.HiddenFor(model => model.adminID)
+        <dt class="fs-3">
+            @Html.DisplayNameFor(model => model.companyAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.companyAddress)
+        </dd>
+
+        <dt class="fs-3">
+            @Html.DisplayNameFor(model => model.companyShippingPolicy)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.companyShippingPolicy)
+        </dd>
+
+        <dt class="fs-3">
+            @Html.DisplayNameFor(model => model.companyReturnPolicy)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.companyReturnPolicy)
+        </dd>
+
+        <dt class="fs-3">
+            @Html.DisplayNameFor(model => model.companyContactInfo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.companyContactInfo)
+        </dd>
+        <dt class="fs-3">
+            @Html.DisplayNameFor(model => model.companyBusinessDescription)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.companyBusinessDescription)
+        </dd>
+    </dl>
+</div>
+@if (Session["isAdminSS"] != null && Session["isAdminSS"] is bool)
+{
+    if ((bool)Session["isAdminSS"])
+    { // If isAdmin == true, show Cart tab
+        @Html.ActionLink("Edit", "Edit", null, new { @class = "btn btn-dark" })
+    }
+}

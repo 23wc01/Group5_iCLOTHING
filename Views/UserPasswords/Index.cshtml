@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Group5__iCLOTHINGApp.Models.UserPassword>
+
+@{
+    ViewBag.Title = "Dashboard";
+}
+<h1>Hello, @Session["userAccountNameSS"]</h1>
+<hr />
+<label class="text-danger">@ViewBag.Notification</label>
+<dl class="dl-horizontal">
+    <dt>
+        Name
+    </dt>
+    <dd>
+        @Session["customerNameSS"]
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.userAccountName)
+    </dt>
+    <dd>
+        @Session["userAccountNameSS"]
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.userEncryptedPassword)
+    </dt>
+    <dd>
+        @Session["userEncryptedPasswordSS"]
+    </dd>
+    <dt>
+        @Html.DisplayNameFor(model => model.passwordExpiryTime)
+    </dt>
+    <dd>
+        @Session["passwordExpiryTimeSS"]
+    </dd>
+
+    <dt>
+        @Html.DisplayNameFor(model => model.userAccountExpiryDate)
+    </dt>
+    <dd>
+        @Session["userAccountExpiryDateSS"]
+    </dd>
+    
+    <dt>
+        @Html.DisplayNameFor(model => model.isAdmin)
+    </dt>
+    <dd>
+        @Session["isAdminSS"]
+    </dd>
+</dl>
+@Html.ActionLink("Modify", "Edit", new { id = @Session["userIDSS"] }, new { @class = "btn btn-outline-dark" })
+@Html.ActionLink("Delete Account", "Delete", new { id = @Session["userIDSS"] }, new { @class = "btn btn-outline-danger justify-center" })
+
