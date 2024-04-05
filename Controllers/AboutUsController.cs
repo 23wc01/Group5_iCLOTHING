@@ -33,7 +33,7 @@ namespace Group5__iCLOTHINGApp.Controllers
         // GET: AboutUs/Details/1234567890
         public ActionResult Details()
         {
-            AboutUs aboutUs = db.AboutUs.Find(adminIDAboutUs); // Get 1st matching (and only) AboutUs with adminID == 1234567890
+            AboutUs aboutUs = db.AboutUs.FirstOrDefault(x => x.adminID == adminIDAboutUs);  // Get 1st matching (and only) AboutUs with adminID == 1234567890
             if (aboutUs == null)
             {
                 return HttpNotFound();
@@ -47,14 +47,16 @@ namespace Group5__iCLOTHINGApp.Controllers
         // GET: AboutUs/Edit/5
         public ActionResult Edit()
         {
-            AboutUs aboutUs = db.AboutUs.Find(adminIDAboutUs); // Get 1st matching (and only) AboutUs with adminID == 1234567890
-            if (aboutUs == null)
+            AboutUs test = new AboutUs();
+            test.adminID = adminIDAboutUs;
+            AboutUs model = db.AboutUs.FirstOrDefault(x => x.adminID == test.adminID);
+            if (model == null)
             {
                 return HttpNotFound();
             }
             else
             {
-                return View(aboutUs);
+                return View(model);
             }
         }
 
