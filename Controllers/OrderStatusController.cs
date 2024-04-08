@@ -17,9 +17,10 @@ namespace Group5__iCLOTHINGApp.Controllers
         // GET: OrderStatus
         public ActionResult Index()
         {
-            var orderStatus = db.OrderStatus.Include(o => o.ShoppingCart);
-            return View(orderStatus.ToList());
+            var orderStatus = db.OrderStatus.Include(os => os.ShoppingCart.Select(sc => sc.Customer)).ToList();
+            return View(orderStatus);
         }
+
 
         // GET: OrderStatus/Details/5
         public ActionResult Details(string id)
@@ -93,6 +94,65 @@ namespace Group5__iCLOTHINGApp.Controllers
             ViewBag.cartID = new SelectList(db.ShoppingCart, "cartID", "customerID", orderStatus.cartID);
             return View(orderStatus);
         }
+
+        //Update the order status
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult ConfirmOrder(string cartID)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(cartID))
+                {
+                    return new HttpStatusCodeResult(HttpStatusCode.BadRequest, "Invalid Cart ID");
+                }
+
+                var shoppingCart = db.ShoppingCart.Include("OrderStatus").FirstOrDefault(sc => sc.cartID == cartID);
+                if (shoppingCart == null)
+                {
+                    return HttpNotFound("Shopping Cart not found.");
+                }
+
+                // Initialize a random instance outside the loop
+                var random = new Random();
+                var statusID = "";
+
+                // Generate a random 10-character string for statusID and check for uniqueness
+                do
+                {
+                    statusID = new string(Enumerable.Repeat("ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789", 10)
+                        .Select(s => s[random.Next(s.Length)]).ToArray());
+                } while (db.OrderStatus.Any(os => os.statusID == statusID)); // Check if the generated ID already exists
+
+                // Create a new OrderStatus indicating the order is confirmed
+                var newOrderStatus = new OrderStatus
+                {
+                    statusID = statusID,
+                    status = "Confirmed",
+                    statusDate = DateTime.Now,
+                    cartID = cartID
+                };
+
+                db.OrderStatus.Add(newOrderStatus);
+                db.SaveChanges();
+
+                TempData["ConfirmationMessage"] = "Order has been confirmed successfully.";
+
+                return RedirectToAction("Index");
+            }
+            catch (Exception ex)
+            {
+                // Log the exception details
+                // For now, we'll just return the exception message back to the view to understand the issue.
+                // In production, you would log the exception and return a user-friendly error message.
+                return Content("An error occurred: " + ex.Message);
+            }
+        }
+
+
+
+
+
 
         // GET: OrderStatus/Delete/5
         public ActionResult Delete(string id)
