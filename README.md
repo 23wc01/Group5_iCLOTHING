@@ -1,6 +1,7 @@
 # Group5 iCLOTHING website
 
 **Wen-Hsin Chen** - Created all tables & relationships for iCLOTHING SQL database. Created MVC for UserPassword, AboutUs, UserQuery, Home, Cataloging, Department, Catagory, Product implementations
+
 **Blake Simpson** - Created logic for email controller, created logic for delivery, created models and views for email and delivery
 
 Important notes: All IDs & queryNo must be 10 chars regardless of whether model it's creating whether UserPassword, ShoppingCart, ItemDelivery, etc.
