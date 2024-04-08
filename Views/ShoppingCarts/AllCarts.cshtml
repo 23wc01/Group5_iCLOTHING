@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Group5__iCLOTHINGApp.Models.ShoppingCart>
+
+@{
+    ViewBag.Title = "All Carts";
+}
+
+<h2>All Customer Carts</h2>
+
+@if (Model != null && Model.Any()) // Check if Model is not null and has elements
+{
+    foreach (var group in Model.GroupBy(cart => cart.customerID))
+    {
+        var customer = group.Select(c => c.Customer).FirstOrDefault();
+
+        <h3>Customer: @customer.customerName</h3>
+        <p>Total Cart Price: @group.Sum(item => item.cartProductPrice * item.cartProductQty)</p>
+        <table class="table">
+            <thead>
+            <th>Cart ID</th>
+            <th>Price</th>
+            <th>Cart Product Quantity</th>
+            </thead>
+
+            @foreach (var item in group)
+            {
+                <tr>
+                    <td>@item.cartID</td> <
+                    <td>@item.cartProductPrice</td>
+                    <td>@item.cartProductQty</td>
+                </tr>
+            }
+        </table>
+    }
+}
+else
+{
+    <p>No carts available.</p>
+}

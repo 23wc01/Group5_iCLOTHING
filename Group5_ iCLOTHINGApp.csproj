@@ -332,6 +332,7 @@
     <Content Include="Views\OrderStatus\Details.cshtml" />
     <Content Include="Views\OrderStatus\Edit.cshtml" />
     <Content Include="Views\OrderStatus\Index.cshtml" />
+    <Content Include="Views\ShoppingCarts\AllCarts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

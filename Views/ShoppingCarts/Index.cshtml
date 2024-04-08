@@ -6,40 +6,55 @@
 
 <h2>Index</h2>
 
+@if (TempData["ConfirmationMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["ConfirmationMessage"]
+    </div>
+}
+
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.cartProductPrice)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().cartProductPrice)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cartProductQty)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().cartProductQty)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Customer.customerName)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().Customer.customerName)
         </th>
-        <th></th>
+        <th>Actions</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.cartProductPrice)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cartProductQty)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Customer.customerName)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.cartID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.cartID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.cartID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.cartProductPrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cartProductQty)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Customer.customerName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.cartID }, new { @class = "btn btn-default btn-xs" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.cartID }, new { @class = "btn btn-info btn-xs" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.cartID }, new { @class = "btn btn-danger btn-xs" })
+                <form action="@Url.Action("ConfirmOrder", "OrderStatus", new { cartID = item.cartID })" method="post" style="display: inline;">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" name="cartID" value="@item.cartID" />
+                    <button type="submit" class="btn btn-success btn-xs">Confirm Order</button>
+                </form>
+            </td>
+        </tr>
+    }
 
 </table>
+
+<p>Total Cost: $@ViewBag.TotalCost</p>

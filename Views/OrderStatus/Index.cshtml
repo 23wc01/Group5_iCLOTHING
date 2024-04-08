@@ -7,39 +7,46 @@
 <h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-primary" })
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.status)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().statusID)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.statusDate)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().status)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.ShoppingCart.customerID)
+            @Html.DisplayNameFor(model => model.FirstOrDefault().statusDate)
         </th>
-        <th></th>
+        <th>
+            Customer Name
+        </th>
+        <th>Actions</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.statusDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShoppingCart.customerID)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.statusID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.statusID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.statusID })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.statusID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.statusDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShoppingCart.Customer.customerName)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.statusID }, new { @class = "btn btn-default btn-xs" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.statusID }, new { @class = "btn btn-info btn-xs" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.statusID }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }
 
 </table>
