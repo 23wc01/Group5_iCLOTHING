@@ -5,6 +5,7 @@
 **Blake Simpson** - Created logic for email controller, created logic for delivery, created models and views for email and delivery
 
 **Olo Masiza** - Created controller logic for ShoppingCart & OrderStatus, created Views for ShoppingCart & OrderStatus.
+
 !!!Important note: All IDs & queryNo must be 10 chars regardless of which model it's creating whether UserPassword, ShoppingCart, ItemDelivery, etc.
 
 ## Administrator login: username = admin | password = admin
